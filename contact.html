@@ -56,6 +56,7 @@
             --text-main: #f3f4f6; 
             --text-muted: #9ca3af; 
             --gradient: linear-gradient(135deg, #f59e0b, #d97706);
+            --whatsapp-color: #25D366;
             --border-color: rgba(245, 158, 11, 0.2);
             --transition-smooth: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
@@ -118,7 +119,8 @@
         }
         .c-form input:focus, .c-form textarea:focus { border-color: var(--accent); box-shadow: 0 0 15px rgba(245, 158, 11, 0.2); }
         
-        .c-form button { 
+        /* Form Button */
+        .c-form button[type="submit"] { 
             width: 100%; 
             padding: 16px; 
             background: var(--gradient); 
@@ -130,7 +132,54 @@
             cursor: pointer; 
             transition: var(--transition-smooth); 
         }
-        .c-form button:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4); }
+        .c-form button[type="submit"]:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4); }
+
+        /* ===== WHATSAPP BUTTON INSIDE PAGE ===== */
+        .whatsapp-divider {
+            text-align: center;
+            margin: 25px 0 20px;
+            position: relative;
+        }
+        .whatsapp-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: rgba(255,255,255,0.1);
+            z-index: 1;
+        }
+        .whatsapp-divider span {
+            background: var(--bg-card);
+            padding: 0 15px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 2;
+        }
+        .whatsapp-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 16px;
+            background: var(--whatsapp-color);
+            color: #fff;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            transition: var(--transition-smooth);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.2);
+        }
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            color: #fff;
+        }
+        .whatsapp-btn i { font-size: 1.4rem; }
 
         /* Footer */
         footer { background: #050810; padding: 80px 5% 20px; border-top: 1px solid var(--border-color); }
@@ -196,10 +245,12 @@
             </div>
 
             <div class="c-form">
+                <!-- Form Action is Back to FormSubmit -->
                 <form action="https://formsubmit.co/seobym.noman@gmail.com" method="POST">
                     <input type="text" name="_honey" style="display:none">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_subject" value="New Contact Form Submission from SEO by Noman Portfolio">
+                    <!-- Redirect to thanks.html after submit -->
                     <input type="hidden" name="_next" value="https://seobynoman.github.io/seobynoman/thanks.html">
                     
                     <input type="text" name="name" placeholder="Your Name" required>
@@ -208,6 +259,14 @@
                     <textarea name="message" rows="5" placeholder="Tell me about your project goals..." required></textarea>
                     <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
                 </form>
+
+                <!-- WhatsApp Button Below Form -->
+                <div class="whatsapp-divider">
+                    <span>OR</span>
+                </div>
+                <a href="https://wa.me/923001888576?text=Hi%20Noman,%20I%20saw%20your%20portfolio%20and%20want%20to%20discuss%20a%20project!" class="whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                </a>
             </div>
         </div>
     </section>
@@ -251,7 +310,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2026 SEO by Noman. All Rights Reserved.</a>
+            &copy; 2026 SEO by Noman. All Rights Reserved.
         </div>
     </footer>
 
