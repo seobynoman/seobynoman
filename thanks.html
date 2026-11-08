@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Sent | SEO by Noman</title>
+    <meta name="robots" content="noindex, nofollow"> <!-- Search engine se chupane ke liye -->
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-dark: #0a0f1c; 
+            --bg-card: #111827; 
+            --accent: #f59e0b; 
+            --text-main: #f3f4f6; 
+            --text-muted: #9ca3af; 
+            --gradient: linear-gradient(135deg, #f59e0b, #d97706);
+            --success: #25D366;
+            --transition-smooth: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        body { 
+            background-color: var(--bg-dark); 
+            color: var(--text-main); 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            text-align: center; 
+            padding: 20px;
+            /* Background mein halki si glow */
+            background-image: radial-gradient(circle at center, rgba(245, 158, 11, 0.05) 0%, transparent 60%);
+        }
+
+        .thankyou-box { 
+            background: var(--bg-card); 
+            padding: 60px 40px; 
+            border-radius: 24px; 
+            border: 1px solid rgba(245, 158, 11, 0.2); 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 30px rgba(245,158,11,0.05); 
+            max-width: 600px;
+            width: 100%;
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .icon-box {
+            width: 100px;
+            height: 100px;
+            background: rgba(37, 211, 102, 0.1);
+            border: 2px solid var(--success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 3rem;
+            color: var(--success);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+            70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        h1 { 
+            color: #fff; 
+            font-size: 2.5rem; 
+            margin-bottom: 15px; 
+            font-weight: 800;
+        }
+
+        p { 
+            color: var(--text-muted); 
+            font-size: 1.1rem; 
+            margin-bottom: 40px; 
+            line-height: 1.6;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-home { 
+            background: var(--gradient); 
+            color: #000; 
+            padding: 15px 35px; 
+            border-radius: 50px; 
+            font-weight: 800; 
+            text-decoration: none; 
+            transition: var(--transition-smooth);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-home:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 15px 30px rgba(245, 158, 11, 0.4); 
+        }
+
+        .btn-wa { 
+            background: transparent; 
+            color: var(--success); 
+            padding: 15px 35px; 
+            border-radius: 50px; 
+            font-weight: 800; 
+            text-decoration: none; 
+            border: 2px solid var(--success);
+            transition: var(--transition-smooth);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-wa:hover { 
+            background: var(--success); 
+            color: #000; 
+            transform: translateY(-5px); 
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .thankyou-box { padding: 40px 20px; }
+            .btn-group { flex-direction: column; }
+            .btn-home, .btn-wa { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="thankyou-box">
+        <!-- Animated Check Icon -->
+        <div class="icon-box">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        
+        <h1>Thank You!</h1>
+        <p>Your message has been successfully sent. I have received your inquiry and will get back to you within 24 hours.</p>
+        
+        <div class="btn-group">
+            <!-- Back to Home Button -->
+            <a href="index.html" class="btn-home">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+            
+            <!-- Direct WhatsApp Button -->
+            <a href="https://wa.me/923001888576?text=Hi%20Noman,%20I%20just%20submitted%20the%20contact%20form%20on%20your%20website." target="_blank" class="btn-wa">
+                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
