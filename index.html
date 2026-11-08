@@ -256,6 +256,18 @@
         .exp-box p, .edu-box p { color: var(--text-muted); font-size: 1rem; line-height: 1.8; transition: var(--transition-smooth); }
         .exp-box:hover p, .edu-box:hover p { color: #d1d5db; }
 
+        /* ===== MOBILE HAMBURGER MENU CSS ===== */
+        .hamburger {
+            display: none;
+            font-size: 1.8rem;
+            color: #fff;
+            cursor: pointer;
+            background: none;
+            border: none;
+            z-index: 1001;
+            transition: 0.3s;
+        }
+
         /* Footer */
         footer { background: #050810; padding: 80px 5% 20px; border-top: 1px solid var(--border-color); }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 50px; margin-bottom: 50px; }
@@ -274,7 +286,28 @@
             .hero { flex-direction: column-reverse; text-align: center; padding-top: 140px; }
             .hero-text h1 { font-size: 3rem; }
             .hero-btns { justify-content: center; }
-            .nav-links { display: none; }
+            
+            .hamburger { display: block; }
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(10, 15, 28, 0.98);
+                backdrop-filter: blur(15px);
+                flex-direction: column;
+                padding: 30px 0;
+                gap: 20px;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: all 0.4s ease-in-out;
+                border-bottom: 2px solid var(--accent);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                text-align: center;
+            }
+            .nav-links.active { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+            .nav-links a { font-size: 1.2rem; padding: 10px; display: block; }
+            .nav-links a::after { display: none; }
+
             .stats { grid-template-columns: 1fr; }
             .expertise-grid { grid-template-columns: 1fr; }
             .ful-card { flex-direction: column; text-align: center; gap: 30px; }
@@ -296,7 +329,13 @@
 
     <nav>
         <div class="logo"><i class="fas fa-chart-line"></i> SEO by <span>Noman</span></div>
-        <div class="nav-links">
+        
+        <!-- Hamburger Button (Mobile Only) -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="nav-links" id="navLinks">
             <a href="index.html">Home</a>
             <a href="case-studies.html">Case Studies</a>
             <a href="contact.html">Contact</a>
@@ -606,9 +645,32 @@
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2026 SEO by Noman. All Rights Reserved.</a>
+            &copy; 2026 SEO by Noman. All Rights Reserved.
         </div>
     </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = hamburger.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.className = 'fas fa-times'; // X icon
+            } else {
+                icon.className = 'fas fa-bars'; // Hamburger icon
+            }
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.querySelector('i').className = 'fas fa-bars';
+            });
+        });
+    </script>
 
 </body>
 </html>
