@@ -16,7 +16,6 @@
     <link rel="shortcut icon" type="image/jpeg" href="seobynoman professional .jpg">
 
     <!-- ===== 2. GOOGLE SEARCH CONSOLE VERIFICATION ===== -->
-    <!-- Google Search Console se jo tag milega, usko yahan paste karein (agar abhi nahi hai toh aise hi rehne dein) -->
     <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" />
 
     <!-- ===== 3. SOCIAL MEDIA TAGS (Open Graph & Twitter) ===== -->
@@ -219,11 +218,11 @@
         .step-item p { color: var(--text-muted); font-size: 0.85rem; transition: var(--transition-smooth); }
         .step-item:hover p { color: #fff; }
 
-        /* ====== PROFESSIONAL EXPERIENCE ====== */
+        /* ====== PROFESSIONAL EXPERIENCE & EDUCATION ====== */
         .experience { padding: 100px 5%; background: var(--bg-dark); }
         .exp-container { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px; }
         
-        .exp-box { 
+        .exp-box, .edu-box { 
             background: var(--bg-card); 
             border-left: 4px solid var(--accent); 
             border-radius: 12px; 
@@ -232,7 +231,7 @@
             cursor: default;
             position: relative;
         }
-        .exp-box:hover { 
+        .exp-box:hover, .edu-box:hover { 
             transform: translateX(15px) scale(1.01); 
             background: var(--bg-card-hover); 
             box-shadow: -15px 15px 40px rgba(0,0,0,0.4), 0 0 20px rgba(245, 158, 11, 0.1); 
@@ -253,9 +252,9 @@
             border: 1px solid rgba(245, 158, 11, 0.2);
             transition: var(--transition-smooth);
         }
-        .exp-box:hover .exp-date { background: var(--accent); color: #000; }
-        .exp-box p { color: var(--text-muted); font-size: 1rem; line-height: 1.8; transition: var(--transition-smooth); }
-        .exp-box:hover p { color: #d1d5db; }
+        .exp-box:hover .exp-date, .edu-box:hover .exp-date { background: var(--accent); color: #000; }
+        .exp-box p, .edu-box p { color: var(--text-muted); font-size: 1rem; line-height: 1.8; transition: var(--transition-smooth); }
+        .exp-box:hover p, .edu-box:hover p { color: #d1d5db; }
 
         /* Footer */
         footer { background: #050810; padding: 80px 5% 20px; border-top: 1px solid var(--border-color); }
@@ -288,6 +287,8 @@
             .timeline-steps { flex-direction: column; gap: 30px; }
             .timeline-steps::before { display: none; }
             .step-item { width: 100%; text-align: center; }
+            
+            .exp-header { flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
@@ -522,6 +523,50 @@
         </div>
     </section>
 
+    <!-- ====== EDUCATION & TRAINING SECTION ====== -->
+    <section class="experience" style="padding-top: 0;">
+        <h2 class="sec-title">My <span>Education & Training</span></h2>
+        <div class="exp-container">
+            
+            <!-- BSCS -->
+            <div class="edu-box">
+                <div class="exp-header">
+                    <div>
+                        <h3>BS Computer Science</h3>
+                        <h4>Superior University, Lahore</h4>
+                    </div>
+                    <span class="exp-date">2022 - 2026</span>
+                </div>
+                <p>Graduated with a Bachelor of Science in Computer Science. Developed a strong technical foundation in web development (HTML, CSS, JavaScript), database management, and software engineering, which allows me to understand complex website architectures and execute advanced Technical SEO strategies effectively.</p>
+            </div>
+
+            <!-- FusionCortex Training -->
+            <div class="edu-box">
+                <div class="exp-header">
+                    <div>
+                        <h3>360 Digital Marketing Training Program</h3>
+                        <h4>FusionCortex</h4>
+                    </div>
+                    <span class="exp-date">Mar 2026 - Jun 2026</span>
+                </div>
+                <p>Completed a comprehensive training program covering On-Page SEO, Off-Page SEO, Technical Audits, WordPress, and Local SEO. Gained practical, hands-on experience in executing advanced SEO strategies for real-world projects.</p>
+            </div>
+
+            <!-- Intermediate -->
+            <div class="edu-box">
+                <div class="exp-header">
+                    <div>
+                        <h3>Intermediate (Pre-Engineering)</h3>
+                        <h4>Govt. College of Science, Lahore</h4>
+                    </div>
+                    <span class="exp-date">2021 - 2022</span>
+                </div>
+                <p>Completed pre-engineering with a focus on Mathematics, Physics, and Chemistry, building strong analytical and problem-solving skills.</p>
+            </div>
+
+        </div>
+    </section>
+
     <!-- FOOTER -->
     <footer>
         <div class="footer-grid">
@@ -561,7 +606,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2026 SEO by Noman. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a>
+            &copy; 2026 SEO by Noman. All Rights Reserved.</a>
         </div>
     </footer>
 
